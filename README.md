@@ -3,6 +3,26 @@ A simple API to access a student Omnivox account's information
 
 This API is used to collect, assemble and display your Omnivox student information. 
 
+## Getinng Started
+First, download the repository:
+```
+git clone https://github.com/SaadZellag/OmnivoxAPI.git
+```
+Then move into it:
+```
+cd OmnivoxAPI
+```
+To run the API without modifying it, cd into the "Jars" just refer to the "Usage" section:
+```
+cd Jars
+```
+
+## Usage
+The use of this API is very simple. If your CEGEP interface has already been implemented by this project, then you can simply run this project's main method with your CEGEP implementation. Simply go to the "Jars" folder and enter the following command inside it:
+```
+java -cp OmnivoxAPI-0.0.1-SNAPSHOT.jar Main.java [CEGEP] [Student Number] [Password]
+```
+
 ## How it works
 It consists of 4 main parts: 
 1. A "scraper" to gather all of the data from Omnivox. (Using gargoylesoftware)
@@ -10,12 +30,8 @@ It consists of 4 main parts:
 3. A "student" to keep all objects.
 4. A "manager" to bind the three aforementionned elements.
 
-## Usage
-The use of this API is very simple. If your CEGEP interface has already been implemented by this project, then you can simply run this project's 
-main method with your CEGEP implementation. For example:
-```
-java -cp OmnivoxAPI-0.0.1-SNAPSHOT.jar Main.java [CEGEP] [Student Number] [Password]
-```
+# Note this jar was built with Java 11
+
 ## Implementation
 Currently, this API supports only the Champlain and Maisonneuve CEGEPs. To support your CEGEP interface, that is different than Champlain and Maisonneuve, you need to extend two classes (OmnivoxScraper and Assembler) and implement their abstract methods. 
 
