@@ -18,19 +18,6 @@ cd Jars
 ```
 
 ## Usage
-The use of this API is straightforward. If this project has already implemented your CEGEP interface, you can run this project's main method with your CEGEP implementation. Go to the "Jars" folder and enter the following command inside it:
-```
-java -cp OmnivoxAPI-0.0.1-SNAPSHOT.jar Main.java [CEGEP] [Student Number] [Password]
-```
-
-## How it works
-It consists of 4 main parts: 
-1. A "scraper" to gather all of the data from Omnivox. (Using gargoylesoftware)
-2. An "assembler" to convert the HTML content to Java objects.
-3. A "student" to keep all objects.
-4. A "manager" to bind the three aforementioned elements.
-
-## Usage
 The use of this API is straightforward. If this project has already implemented your CEGEP interface, then you can run this project's main method with your CEGEP implementation. Download the "jars" folder and enter the following command inside it:
 ```
 java -cp OmnivoxAPI-0.0.1-SNAPSHOT.jar Main.java [CEGEP] [Student Number] [Password]
@@ -44,7 +31,15 @@ java -cp OmnivoxAPI-0.0.1-SNAPSHOT.jar Main.java champlain 1234567 password
 java -cp OmnivoxAPI-0.0.1-SNAPSHOT.jar Main.java maisonneuve 1234567 password
 ```
 
-Want to use it for your CEGEP? Refer to the "Implementation" section to contribute to the project.
+Your CEGEP doesn't show up? Refer to the "Implementation" section to contribute to the project.
+
+
+## How it works
+It consists of 4 main parts: 
+1. A "scraper" to gather all of the data from Omnivox. (Using gargoylesoftware)
+2. An "assembler" to convert the HTML content to Java objects.
+3. A "student" to keep all objects.
+4. A "manager" to bind the three aforementioned elements.
 
 ### Note this jar was built with Java 11
 
