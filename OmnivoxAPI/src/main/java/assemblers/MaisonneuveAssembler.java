@@ -66,6 +66,7 @@ public class MaisonneuveAssembler extends Assembler {
 	@Override
 	public CourseDocument[] assembleDocuments(HtmlPage page) {
 		List<HtmlElement> documents = page.getByXPath("//*[@class='itemDataGrid' or @class='itemDataGridAltern']");
+		System.out.println(documents.size());
 
 		String courseName = page.<HtmlElement>getFirstByXPath("//*[@class='TitrePageLigne2']").asText();
 		System.out.printf("Getting documents for %s...\n", courseName);
@@ -168,15 +169,18 @@ public class MaisonneuveAssembler extends Assembler {
 	 */
 	private static CourseDocument formatDocument(String courseName, String documentName, String distributed,
 			String view, boolean seen) {
-
+		
+		
 		// Formatting the Strings
-		documentName = documentName.replace("\n", "").replace("\r", " ").strip();
-		distributed = distributed.replace("\n", "").replace("\r", " ");
+		documentName = documentName.replace("\n", " ").replace("\r", "").strip();
+		distributed = distributed.replace("\n", " ").replace("\r", "");
 		distributed = distributed.substring(10);
-		view = view.replace("\n", "").replace("\r", " ");
+		view = view.replace("\n", " ").replace("\r", "");
 		view = view.isBlank() ? "Link" : view.strip();
-
+		
+		
 		distributed = formatDate(distributed);
+		
 
 		try {
 			return new CourseDocument(courseName, documentName, documentFormatter.parse(distributed), seen, view);
@@ -200,8 +204,8 @@ public class MaisonneuveAssembler extends Assembler {
 			boolean seen, boolean completed) {
 
 		// Formatting the Strings
-		assignmentName = assignmentName.replace("\n", "").replace("\r", " ").strip();
-		distributed = distributed.replace("\n", "").replace("\r", " ");
+		assignmentName = assignmentName.replace("\n", " ").replace("\r", "").strip();
+		distributed = distributed.replace("\n", " ").replace("\r", "");
 		distributed = distributed.substring(0, 11);
 		distributed = formatDate(distributed);
 
@@ -228,7 +232,6 @@ public class MaisonneuveAssembler extends Assembler {
 		} else {
 			s = String.join(" ", splitted[0], realMonths.get(splitted[1]), splitted[2]);
 		}
-
 		return s;
 	}
 
@@ -248,9 +251,9 @@ public class MaisonneuveAssembler extends Assembler {
 			String title, String description) {
 
 		// Formatting Strings
-		courseName = courseName.replace("\n", "").replace("\r", " ").strip();
-		title = title.replace("\n", "").replace("\r", " ").strip();
-		description = description.replace("\n", "").replace("\r", " ").strip();
+		courseName = courseName.replace("\n", " ").replace("\r", "").strip();
+		title = title.replace("\n", " ").replace("\r", "").strip();
+		description = description.replace("\n", " ").replace("\r", "").strip();
 
 		try {
 			return new CalendarEvent(courseName, title, calendarEventFormatter.parse(day + " " + month + " " + year),

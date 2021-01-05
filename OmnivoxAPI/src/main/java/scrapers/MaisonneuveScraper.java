@@ -33,7 +33,7 @@ public class MaisonneuveScraper extends OmnivoxScraper {
 
 		for (int i = 0; i < classes.size(); i++) {
 
-			HtmlElement button = classes.get(i).getFirstByXPath("./div[2]/a[2]");
+			HtmlElement button = classes.get(i).getFirstByXPath("./div[2]/a[1]");
 
 			try {
 				return_array[i] = button.click();
