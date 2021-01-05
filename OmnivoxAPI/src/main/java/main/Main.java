@@ -14,8 +14,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		
-
 		if (args.length != 3) {
 			System.out.println("Usage: java Main [CegepName] [StudentNumber] [Password]");
 			System.out.println("Or: java -cp OmnivoxAPI-0.0.1-SNAPSHOT.jar Main [CegepName] [StudentNumber] [Password]");
