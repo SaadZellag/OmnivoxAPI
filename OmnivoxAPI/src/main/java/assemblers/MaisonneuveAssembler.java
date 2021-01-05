@@ -66,7 +66,6 @@ public class MaisonneuveAssembler extends Assembler {
 	@Override
 	public CourseDocument[] assembleDocuments(HtmlPage page) {
 		List<HtmlElement> documents = page.getByXPath("//*[@class='itemDataGrid' or @class='itemDataGridAltern']");
-		System.out.println(documents.size());
 
 		String courseName = page.<HtmlElement>getFirstByXPath("//*[@class='TitrePageLigne2']").asText();
 		System.out.printf("Getting documents for %s...\n", courseName);
